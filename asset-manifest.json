@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/front-end-react-template/static/css/main.fbe5a701.css",
-    "main.js": "/front-end-react-template/static/js/main.66fe4441.js",
-    "index.html": "/front-end-react-template/index.html",
-    "main.fbe5a701.css.map": "/front-end-react-template/static/css/main.fbe5a701.css.map",
-    "main.66fe4441.js.map": "/front-end-react-template/static/js/main.66fe4441.js.map"
+    "main.css": "/LearnLingo/static/css/main.79947160.css",
+    "main.js": "/LearnLingo/static/js/main.2426d5d0.js",
+    "index.html": "/LearnLingo/index.html",
+    "main.79947160.css.map": "/LearnLingo/static/css/main.79947160.css.map",
+    "main.2426d5d0.js.map": "/LearnLingo/static/js/main.2426d5d0.js.map"
   },
   "entrypoints": [
-    "static/css/main.fbe5a701.css",
-    "static/js/main.66fe4441.js"
+    "static/css/main.79947160.css",
+    "static/js/main.2426d5d0.js"
   ]
 }
