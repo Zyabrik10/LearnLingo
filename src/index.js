@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/front-end-react-template">
+    <BrowserRouter basename="/LearnLingo">
       <App />
     </BrowserRouter>
   </React.StrictMode>
