@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/front-end-react-template/static/css/main.fbe5a701.css",
+    "main.js": "/front-end-react-template/static/js/main.66fe4441.js",
+    "index.html": "/front-end-react-template/index.html",
+    "main.fbe5a701.css.map": "/front-end-react-template/static/css/main.fbe5a701.css.map",
+    "main.66fe4441.js.map": "/front-end-react-template/static/js/main.66fe4441.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fbe5a701.css",
+    "static/js/main.66fe4441.js"
+  ]
+}
