@@ -1,8 +1,9 @@
 .container {
   width: 100%;
   max-width: 345px;
+
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -31,4 +32,15 @@
   .section {
     padding: 100px 0;
   }
+}
+
+.main-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 20px;
+  font-weight: 500;
+  line-height: calc(24 / 20);
+  letter-spacing: -0.4px;
 }

@@ -1,5 +1,10 @@
+import { Statistics, Hero } from './sections/index';
+
 export default function Home() {
-    return <>
-        Home
-    </>;
+  return (
+    <>
+      <Hero />
+      <Statistics />
+    </>
+  );
 }

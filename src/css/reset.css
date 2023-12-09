@@ -30,3 +30,7 @@ button {
   font-weight: inherit;
   font-style: inherit;
 }
+
+img {
+  display: block;
+}

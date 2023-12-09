@@ -1,3 +1,11 @@
+@import url(css/index.css);
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 #root {
   display: flex;
   flex-direction: column;
@@ -10,9 +18,10 @@ body,
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background: #f5f7fa;
-  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  background: var(--primary);
+  font-size: 16px;
+  color: var(--text-color1);
   overflow-x: hidden;
 
   padding: 0;
