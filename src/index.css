@@ -1,0 +1,24 @@
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f5f7fa;
+  font-size: 14px;
+  overflow-x: hidden;
+
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  flex: 1 0 auto;
+}
