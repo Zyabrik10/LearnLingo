@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/LearnLingo/static/css/main.79947160.css",
-    "main.js": "/LearnLingo/static/js/main.2426d5d0.js",
+    "main.css": "/LearnLingo/static/css/main.40adf5cc.css",
+    "main.js": "/LearnLingo/static/js/main.8ffc6282.js",
     "index.html": "/LearnLingo/index.html",
-    "main.79947160.css.map": "/LearnLingo/static/css/main.79947160.css.map",
-    "main.2426d5d0.js.map": "/LearnLingo/static/js/main.2426d5d0.js.map"
+    "static/media/burger-menu.svg": "/LearnLingo/static/media/burger-menu.9a3cb0511c9830b06aaf03610ef07d10.svg",
+    "static/media/log-in.svg": "/LearnLingo/static/media/log-in.d3edbd99db7c1c3d823755570ca3eb2f.svg",
+    "static/media/ukraine.svg": "/LearnLingo/static/media/ukraine.d34743a6d4214a7edfd037c74ed2da93.svg",
+    "main.40adf5cc.css.map": "/LearnLingo/static/css/main.40adf5cc.css.map",
+    "main.8ffc6282.js.map": "/LearnLingo/static/js/main.8ffc6282.js.map"
   },
   "entrypoints": [
-    "static/css/main.79947160.css",
-    "static/js/main.2426d5d0.js"
+    "static/css/main.40adf5cc.css",
+    "static/js/main.8ffc6282.js"
   ]
 }
