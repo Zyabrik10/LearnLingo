@@ -5,21 +5,41 @@
 
   /* Colors */
   --primary: #ffffff;
+
   --color1: #f4c550;
-  --color2: #f4c550;
-  --color3: #9fbaae;
-  --color4: #cbded3;
-  --color5: #9fb7ce;
-  --color6: #bfd6ea;
-  --color7: #bfd6ea;
-  --color8: #bfd6ea;
-  --color9: #bfd6ea;
-  --color10: #f4c8ba;
-  --color11: #38cd3e;
-  --color12: #8a8a89;
+  --color1-2: #fbe9ba;
+
+  --color2: #9fbaae;
+  --color2-2: #cbded3;
+
+  --color3: #9fb7ce;
+  --color3-2: #bfd6ea;
+
+  --color4: #e0a39a;
+  --color4-2: #f2c0bd;
+
+  --color5: #f0aa8d;
+  --color5-2: #f4c8ba;
+
+  --color6: #38cd3e;
+
+  --color7: #8a8a89;
 
   /* text color */
   --text-color1: #121417;
   --text-color2: #121417cc;
   --text-color3: #8a8a89;
+  --text-color4: rgba(18, 20, 23, 0.8);
+
+  /* gradients */
+  --gradient1: linear-gradient(180deg, #eeb055 0%, #d08f38 100%);
+  --gradient1-2: linear-gradient(180deg, #fbe9ba 0%, #e7c885 100%);
+  --gradient2: linear-gradient(180deg, #295761 0%, #183e49 100%);
+  --gradient2-2: linear-gradient(180deg, #cbded3 0%, #9eb9ad 100%);
+  --gradient3: linear-gradient(180deg, #314b6e 0%, #1f385a 100%);
+  --gradient3-2: linear-gradient(180deg, #bfd6ea 0%, #9fb6cd 100%);
+  --gradient4: linear-gradient(180deg, #b03f3e 0%, #982a27 100%);
+  --gradient4-2: linear-gradient(180deg, #f1c0bd 0%, #dfa299 100%);
+  --gradient5: linear-gradient(180deg, #e17650 0%, #ca5b38 100%);
+  --gradient5-2: linear-gradient(180deg, #f3c8ba 0%, #efa98c 100%);
 }

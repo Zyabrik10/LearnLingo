@@ -18,24 +18,9 @@ export default function NavigationItem({ children, path, itemClasses }) {
 
   const iClasses = itemClasses ? itemClasses.join(' ') : '';
 
-  function chooseColor(color) {
-    switch (color) {
-      case 'orange':
-        return 'orange';
-      case 'red':
-        return 'red';
-      case 'green':
-        return 'green';
-      case 'blue':
-        return 'blue';
-      default:
-        return 'black';
-    }
-  }
-
   return (
     <li className={`${iClasses}`}>
-      <StyledLink color={chooseColor(color)} className={css['link']} to={path}>
+      <StyledLink color={color.primary} className={css['link']} to={path}>
         {children}
       </StyledLink>
     </li>

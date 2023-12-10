@@ -22,6 +22,9 @@ ol {
 }
 
 button {
+  display: block;
+  padding: 0;
+
   background: transparent;
   border: none;
   cursor: pointer;
@@ -29,6 +32,8 @@ button {
   font-family: inherit;
   font-weight: inherit;
   font-style: inherit;
+
+  color: currentColor;
 }
 
 img {

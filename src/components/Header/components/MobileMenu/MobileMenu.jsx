@@ -2,40 +2,44 @@ import { useCallback, useEffect } from 'react';
 import { HeaderAuth, HeaderNavigation } from '../index';
 import css from './MobileMenu.module.css';
 
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectModals } from '../../../../redux/modals/modals-select';
+import { toggleModalWindow } from '../../../../redux/modals/modals-reducer';
 
-export default function MobileMenu({ active, setActive }) {
-  const closeOnBackground = ({ target, currentTarget }) =>
-    target === currentTarget && setActive(false);
+export default function MobileMenu() {
+  const { modalBurgerMenu } = useSelector(selectModals);
+  const dispatch = useDispatch();
+
+  const closeOnClickOnBackground = ({ target, currentTarget }) =>
+    target === currentTarget &&
+    dispatch(toggleModalWindow({ modal: 'modalBurgerMenu', state: false }));
 
   const closeOnEscape = useCallback(
     ({ key }) => {
-      if (key === 'Escape') setActive(false);
+      if (key === 'Escape')
+        dispatch(toggleModalWindow({ modal: 'modalBurgerMenu', state: false}));
     },
-    [setActive]
+    [dispatch]
   );
 
   useEffect(() => {
-    if (active) window.addEventListener('keydown', closeOnEscape);
+    if (modalBurgerMenu) window.addEventListener('keydown', closeOnEscape);
     else window.removeEventListener('keydown', closeOnEscape);
-  }, [active, closeOnEscape]);
+  }, [modalBurgerMenu, closeOnEscape]);
 
   return (
     <div
-      className={`${css['mobile-menu']} ${active ? css['active'] : ''}`}
-      onMouseDown={closeOnBackground}
+      className={`${css['mobile-menu']} ${
+        modalBurgerMenu ? css['active'] : ''
+      }`}
+      onMouseDown={closeOnClickOnBackground}
     >
       <HeaderNavigation
         navClasses={[css['nav']]}
         listClasses={[css['list']]}
         itemClasses={[css['item']]}
       />
-      <HeaderAuth authClasses={[css['auth']]} setActive={setActive} />
+      <HeaderAuth authClasses={[css['auth']]} />
     </div>
   );
 }
-
-MobileMenu.propTypes = {
-  active: PropTypes.bool,
-  setActive: PropTypes.func,
-};
