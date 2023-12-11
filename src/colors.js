@@ -6,11 +6,17 @@ export const colors = [
     secondary: getComputedStyle(document.documentElement).getPropertyValue(
       '--color1-2'
     ),
-    linGrad1: getComputedStyle(document.documentElement).getPropertyValue(
-      '--gradient1'
+    lgs1: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient1-start'
     ),
-    linGrad2: getComputedStyle(document.documentElement).getPropertyValue(
-      '--gradient1-2'
+    lge1: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient1-end'
+    ),
+    lgs2: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient1-2-start'
+    ),
+    lge2: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient1-2-end'
     ),
   },
   {
@@ -20,11 +26,17 @@ export const colors = [
     secondary: getComputedStyle(document.documentElement).getPropertyValue(
       '--color2-2'
     ),
-    linGrad1: getComputedStyle(document.documentElement).getPropertyValue(
-      '--gradient2'
+    lgs1: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient2-start'
     ),
-    linGrad2: getComputedStyle(document.documentElement).getPropertyValue(
-      '--gradient2-2'
+    lge1: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient2-end'
+    ),
+    lgs2: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient2-2-start'
+    ),
+    lge2: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient2-2-end'
     ),
   },
   {
@@ -34,11 +46,17 @@ export const colors = [
     secondary: getComputedStyle(document.documentElement).getPropertyValue(
       '--color3-2'
     ),
-    linGrad1: getComputedStyle(document.documentElement).getPropertyValue(
-      '--gradient3'
+    lgs1: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient3-start'
     ),
-    linGrad2: getComputedStyle(document.documentElement).getPropertyValue(
-      '--gradient3-2'
+    lge1: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient3-end'
+    ),
+    lgs2: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient3-2-start'
+    ),
+    lge2: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient3-2-end'
     ),
   },
   {
@@ -48,11 +66,17 @@ export const colors = [
     secondary: getComputedStyle(document.documentElement).getPropertyValue(
       '--color4-2'
     ),
-    linGrad1: getComputedStyle(document.documentElement).getPropertyValue(
-      '--gradient4'
+    lgs1: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient4-start'
     ),
-    linGrad2: getComputedStyle(document.documentElement).getPropertyValue(
-      '--gradient4-2'
+    lge1: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient4-end'
+    ),
+    lgs2: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient4-2-start'
+    ),
+    lge2: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient4-2-end'
     ),
   },
   {
@@ -62,11 +86,17 @@ export const colors = [
     secondary: getComputedStyle(document.documentElement).getPropertyValue(
       '--color5-2'
     ),
-    linGrad1: getComputedStyle(document.documentElement).getPropertyValue(
-      '--gradient5'
+    lgs1: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient5-start'
     ),
-    linGrad2: getComputedStyle(document.documentElement).getPropertyValue(
-      '--gradient5-2'
+    lge1: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient5-end'
+    ),
+    lgs2: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient5-2-start'
+    ),
+    lge2: getComputedStyle(document.documentElement).getPropertyValue(
+      '--gradient5-2-end'
     ),
   },
 ];

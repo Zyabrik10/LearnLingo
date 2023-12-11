@@ -3,18 +3,10 @@ import closeEyes from 'assets/icon/eye-off.svg';
 
 import PropTypes from 'prop-types';
 import FormInput from './components/FormInput/FormInput';
-import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import selectWebsite from '../../../../redux/website/website-selector';
 
-const StyledButton = styled.button`
-  background: ${props => props.color.primary};
-
-  &:focus,
-  &:hover {
-    background: ${props => props.color.secondary};
-  }
-`;
+import { StyledButton } from 'components/StyledButton/StyledButton';
 
 export default function ModalForm({
   formHandler,
@@ -72,7 +64,7 @@ export default function ModalForm({
           onIconClick={onIconClick}
         />
       ) : null}
-      <StyledButton color={color} className={css['button']}>
+      <StyledButton color={color.primary} $subcolor={color.secondary} className={css['button']}>
         {buttonText}
       </StyledButton>
     </form>

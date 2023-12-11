@@ -1,5 +1,5 @@
-import { TeachersList } from "./sections";
+import { TeachersListSec } from "./sections/";
 
 export default function Teachers() {
-    return <TeachersList />
+    return <TeachersListSec />
 }

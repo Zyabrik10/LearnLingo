@@ -1,0 +1,16 @@
+.box {
+  flex: 1;
+}
+
+.name {
+  font-size: 24px;
+  line-height: 1;
+
+  margin-bottom: 32px;
+}
+
+.experience {
+  line-height: calc(24 / 16);
+  font-weight: 400;
+  margin-bottom: 32px;
+}

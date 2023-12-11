@@ -1,1 +1,1 @@
-export { default as TeachersList } from './TeachersList/TeachersList';
+export { default as TeachersListSec } from './TeachersListSec/TeachersListSec';

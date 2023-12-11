@@ -1,5 +1,6 @@
 .header {
-  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 
 .header .header-container {
@@ -10,7 +11,7 @@
 
 @media screen and (min-width: 1440px) {
   .header .header-container {
-    max-width: 1138px;
+    max-width: 1184px;
   }
 }
 
