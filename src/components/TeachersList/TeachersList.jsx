@@ -6,13 +6,13 @@ import { nanoid } from '@reduxjs/toolkit';
 
 export default function TeachersList({ teachersList }) {
   return (
-    teachersList && (
+    teachersList?.length !== 0 ? (
       <ul className={css['list']}>
         {teachersList.map((teacher) => (
             <TeachersItem key={nanoid()} teacher={teacher} />
         ))}
       </ul>
-    )
+    ) : <p className={css["p"]}>No teachers</p>
   );
 }
 

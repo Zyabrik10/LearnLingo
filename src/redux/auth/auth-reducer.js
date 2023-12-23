@@ -4,7 +4,11 @@ import { initialState } from './auth-init';
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {},
+  reducers: {
+    toggleIsLoggedIn(state, { payload }) {
+      state.isLoggedIn = payload;
+    },
+  },
   extraReducers: builder => {},
 });
 

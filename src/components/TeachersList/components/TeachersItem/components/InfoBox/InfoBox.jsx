@@ -3,8 +3,7 @@ import {
   HeaderBox,
   LevelsOfLanguage,
   LocalInfoList,
-  ReadMore,
-  Reviews,
+  ReadMoreBox,
 } from '../';
 
 import css from './InfoBox.module.css';
@@ -41,9 +40,7 @@ export default function InfoBox({ teacher }) {
         lesson_info={lesson_info}
         conditions={conditions}
       />
-      <p className={css['experience']}>{experience}</p>
-      <ReadMore />
-      <Reviews reviews={reviews} />
+      <ReadMoreBox experience={experience} reviews={reviews} />
       <LevelsOfLanguage levels={levels} />
       {reviews.length > 0 ? <BookButton /> : null}
     </div>
