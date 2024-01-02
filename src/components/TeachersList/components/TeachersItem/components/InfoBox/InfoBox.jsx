@@ -12,6 +12,7 @@ import PropTypes from 'prop-types';
 
 export default function InfoBox({ teacher }) {
   const {
+    id,
     name,
     surname,
     rating,
@@ -31,6 +32,7 @@ export default function InfoBox({ teacher }) {
         rating={rating}
         lessons_done={lessons_done}
         price_per_hour={price_per_hour}
+        id={id}
       />
       <p className={css['name']}>
         {name} {surname}

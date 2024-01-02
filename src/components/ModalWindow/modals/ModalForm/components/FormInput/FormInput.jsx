@@ -10,7 +10,7 @@ export default function FormInput({
   isIcon = false,
   icon = null,
   placeholder = '',
-  required = true,
+  required = false,
   setText,
   onIconClick,
 }) {

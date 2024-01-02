@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getTeachersList } from 'api/teachersAPI';
 import { StyledButton } from 'components/StyledButton/StyledButton';
-import { getTeachers, setLoading } from '../../redux/teachers/teachers-reducer';
 import selectWebsite from '../../redux/website/website-selector';
 
-import {  Bars } from 'react-loader-spinner';
+import { Bars } from 'react-loader-spinner';
 
 import css from './SeeMore.module.css';
 import { selectTeachers } from '../../redux/teachers/teachers-select';
 
-export default function SeeMore() {
+import PropTypes from "prop-types";
+
+export default function SeeMore({teachers, getTeachers}) {
   const { isLoading } = useSelector(selectTeachers);
   const { color } = useSelector(selectWebsite);
 
@@ -18,13 +18,8 @@ export default function SeeMore() {
   const [pageSize, setPageSize] = useState(4);
 
   useEffect(() => {
-    dispatch(setLoading(true));
-
-    getTeachersList(pageSize).then(res => {
-      dispatch(getTeachers(res));
-      dispatch(setLoading(false));
-    });
-  }, [dispatch, pageSize]);
+    dispatch(getTeachers(pageSize));
+  }, [dispatch, pageSize, getTeachers]);
 
   function buttonHandler() {
     setPageSize(pageSize + 4);
@@ -43,15 +38,22 @@ export default function SeeMore() {
       }}
     />
   ) : (
-    <StyledButton
-      color={color.primary}
-      $subcolor={color.secondary}
-      className={css['button']}
-      onClick={buttonHandler}
+    teachers?.length !== 0 && (
+      <StyledButton
+        color={color.primary}
+        $subcolor={color.secondary}
+        className={css['button']}
+        onClick={buttonHandler}
         $maxwidth="183px"
-        type='button'
-    >
-      More
-    </StyledButton>
+        type="button"
+      >
+        More
+      </StyledButton>
+    )
   );
+}
+
+SeeMore.propTypes = {
+  teachers: PropTypes.array,
+  getTeachers: PropTypes.func,
 }

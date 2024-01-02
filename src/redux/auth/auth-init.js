@@ -1,4 +1,7 @@
+export const user = JSON.parse(localStorage.getItem('user-learn-lingo'));
+
 export const initialState = {
-  user: {},
-  isLoggedIn: false,
+  user: user?.user || {},
+  isLoggedIn: !!user,
+  token: user?.token || '',
 };

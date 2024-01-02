@@ -1,22 +1,69 @@
-import { useDispatch, useSelector } from "react-redux";
-import selectWebsite from "../../../../../../../../redux/website/website-selector";
-import { useState } from "react";
-import { selectAuth } from "../../../../../../../../redux/auth/auth-selector";
-import { toggleModalWindow } from "../../../../../../../../redux/modals/modals-reducer";
+import { useDispatch, useSelector } from 'react-redux';
+import selectWebsite from '../../../../../../../../redux/website/website-selector';
+import { useState } from 'react';
+import { selectAuth } from '../../../../../../../../redux/auth/auth-selector';
+import { toggleModalWindow } from '../../../../../../../../redux/modals/modals-reducer';
 
-export default function HeaderHeart() {
+import PropTypes from 'prop-types';
+import {
+  addFavTeacher,
+  removeFavTeacher,
+} from '../../../../../../../../redux/teachers/teachers-reducer';
+import { selectTeachers } from '../../../../../../../../redux/teachers/teachers-select';
+
+export default function HeaderHeart({ id }) {
   const { color } = useSelector(selectWebsite);
-  const { isLoggedIn } = useSelector(selectAuth);
-  const [active, setActive] = useState(false);
+  const { isLoggedIn, user } = useSelector(selectAuth);
+  const { favTeachers, teachers } = useSelector(selectTeachers);
+
+  console.log(
+    favTeachers.findIndex(
+      ({ teacher: { id: teacherId } }) => teacherId === id
+    ) !== -1
+  );
+
+  const [active, setActive] = useState(
+    isLoggedIn &&
+          favTeachers.findIndex(
+      ({ teacher: { id: teacherId } }) => teacherId === id
+    ) !== -1
+  );
+
   const dispatch = useDispatch();
 
   const buttonHandler = () => {
-    if (isLoggedIn) setActive(!active);
-    else dispatch(toggleModalWindow({modal: "modalAuth", state: true}));
+    if (isLoggedIn) {
+      if (active) {
+        const teacher = teachers.filter(
+          ({ id: teacherId }) => teacherId === id
+        )[0];
+
+        setActive(false);
+        dispatch(
+          removeFavTeacher({
+            user,
+            teacher,
+          })
+        );
+      } else {
+        const teacher = teachers.filter(
+          ({ id: teacherId }) => teacherId === id
+        )[0];
+
+        setActive(true);
+        dispatch(
+          addFavTeacher({
+            user: user,
+            teacher,
+          })
+        );
+      }
+    } else dispatch(toggleModalWindow({ modal: 'modalAuth', state: true }));
   };
 
   return (
     <svg
+      data-id={id}
       onClick={buttonHandler}
       width="26"
       height="26"
@@ -34,3 +81,7 @@ export default function HeaderHeart() {
     </svg>
   );
 }
+
+HeaderHeart.propTypes = {
+  id: PropTypes.string,
+};

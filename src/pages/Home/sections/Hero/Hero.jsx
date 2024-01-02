@@ -1,4 +1,4 @@
-import { StyledButton } from 'components/StyledButton/StyledButton';
+import { StyledButton, StyledLink } from 'components/StyledButton/StyledButton';
 import css from './Hero.module.css';
 import globalCss from 'css/global.module.css';
 import { useSelector } from 'react-redux';
@@ -22,9 +22,9 @@ export default function Hero() {
             Elevate your language proficiency to new heights by connecting with
             highly qualified and experienced tutors.
           </p>
-          <StyledButton className={css["button"]} color={color} $maxwidth="267px">
+          <StyledLink className={css["button"]} color={color.primary} $subcolor={color.secondary} $maxwidth="267px" to="/teachers">
             Get started
-          </StyledButton>
+          </StyledLink>
         </div>
         <div className={css['dec']} style={{ background: color.secondary }}>
           <img className={css['girl']} src={girlImage} alt="" />

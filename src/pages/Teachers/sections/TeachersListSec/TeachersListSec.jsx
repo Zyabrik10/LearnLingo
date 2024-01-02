@@ -7,32 +7,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import SeeMore from 'components/SeeMore/SeeMore';
 
 import { useEffect } from 'react';
-import {
-  getTeachers,
-  setLoading,
-} from '../../../../redux/teachers/teachers-reducer';
-import { getTeachersList } from 'api/teachersAPI';
+import { getTeachers } from '../../../../redux/teachers/teachers-action';
 
 export default function TeachersListSec() {
-  const { teachers } = useSelector(selectTeachers);
-
+  const { isLoading, teachers } = useSelector(selectTeachers);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setLoading(true));
-
-    getTeachersList(4).then(res => {
-      dispatch(getTeachers(res));
-      dispatch(setLoading(false));
-    });
+    dispatch(getTeachers(4));
   }, [dispatch]);
 
   return (
     <section className={css['teachers-list']}>
       <div className={globalCss['container']}>
         <FilterForm />
-        {teachers?.length !== 0  && <TeachersList teachersList={teachers} />}
-        <SeeMore />
+        <TeachersList teachersList={teachers} />
+        {teachers?.length === 0 && !isLoading &&  <p className={css['p']}>No teachers</p>}
+        <SeeMore teachers={teachers} getTeachers={getTeachers} />
       </div>
     </section>
   );

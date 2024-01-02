@@ -4,38 +4,51 @@ import css from './RegistrationModal.module.css';
 import ModalForm from '../ModalForm/ModalForm';
 import { useState } from 'react';
 import { selectModals } from '../../../../redux/modals/modals-select';
-import { useSelector } from 'react-redux';
-import { auth } from 'config/firebaseConfig';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { selectAuth } from '../../../../redux/auth/auth-selector';
+import { signup } from '../../../../redux/auth/auth-actions';
+import { toggleModalWindow } from '../../../../redux/modals/modals-reducer';
+import { userSignupSchema } from 'yupSchemas/signup/signup';
+import { toast } from 'react-toastify';
+import { StyledNotyfication } from 'components/StyledNotifycation/StyledNotifycation';
+import selectWebsite from '../../../../redux/website/website-selector';
 
 export default function RegistrationModal() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { modalRegistration } = useSelector(selectModals);
-  const dispatch = useSelector(selectAuth);
+  const dispatch = useDispatch(selectAuth);
+  const { color } = useSelector(selectWebsite);
+
 
   const formHandler = async e => {
-    e.preventDefault();
+   try {
+      e.preventDefault();
 
-    await createUserWithEmailAndPassword(auth, email, password)
-      .then(userCredential => {
-        const user = userCredential.user;
-        console.log(user);
-        dispatch();
-      })
-      .catch(error => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-        // ..
-      });
+      const userInfo = {
+        email,
+        password,
+        name
+      };
+
+      const user = await userSignupSchema.validate(userInfo);
+
+      dispatch(signup(user));
+      dispatch(toggleModalWindow({ modal: 'modalRegistration', state: false }));
+      setEmail("");
+      setPassword("");
+    } catch (e) {
+      toast(e.message);
+      toast.clearWaitingQueue();
+    }
   };
 
   return (
     <ModalWindow modal="modalRegistration" modalState={modalRegistration}>
+      <StyledNotyfication color={color.primary} limit={1}/>
+
       <p className={modalCss['title']}>Registration</p>
       <p className={`${modalCss['p']} ${css['p']}`}>
         Thank you for your interest in our platform! In order to register, we
